@@ -1,19 +1,16 @@
-<html>
-    <head>
-        <title>RPG System</title>
-    </head>
-    <body>
-        <div>
-            <h1>RPG System</h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        {% for post in posts %}
-        <div>
-            <p>Publicado: {{ post.published_date }}</p>
+
+{% block conteudo %}
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>Publicado: {{ post.published_date }}</p>
+            </div>
             <h2><a href="">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        {% endfor %}
-        <br />
-    </body>
-</html>
+    {% endfor %}
+
+{% endblock %}
