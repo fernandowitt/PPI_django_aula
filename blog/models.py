@@ -16,3 +16,8 @@ class Post(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.title, self.text)
+
+class Character(models.Model):
+	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	name = models.CharField(max_length=100)
+	
